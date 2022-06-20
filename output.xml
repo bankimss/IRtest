@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220531 05:44:51.597" rpa="false" schemaversion="2">
+<suite id="s1" name="FetchToken" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING\FetchToken.robot">
+<test id="s1-t1" name="Geneareta the token using authenticate so that Request chaining can be used">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{REQ_data}</var>
+<arg>Email=jkshah@analytix.com</arg>
+<arg>Password=Analytix@123</arg>
+<arg>IssSelfOnBoard=false</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220531 05:44:51.974" level="INFO">&amp;{REQ_data} = { Email=jkshah@analytix.com | Password=Analytix@123 | IssSelfOnBoard=false }</msg>
+<status status="PASS" starttime="20220531 05:44:51.973" endtime="20220531 05:44:51.974"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${Res}</var>
+<arg>${BaseURL}/api/Authentication/Authenticate</arg>
+<arg>json=${REQ_data}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220531 05:44:56.231" level="INFO">POST Request : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
+ path_url=/api/Authentication/Authenticate 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '87', 'Content-Type': 'application/json'} 
+ body=b'{"Email": "jkshah@analytix.com", "Password": "Analytix@123", "IssSelfOnBoard": "false"}' 
+ </msg>
+<msg timestamp="20220531 05:44:56.231" level="INFO">POST Response : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
+ status=200, reason=OK 
+ headers={'Content-Length': '949', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0/V2VYgAAAACd/3mmReM7TonVURpHHgqQQk9NMDJFREdFMDkxOQAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:14:56 GMT'} 
+ body={"responseModel":{"strEnumUserGroup":"EnumUserGroup.enumUserGroupAixIndia","strEnumRole":"EnumRole.enumIndiaManager","strEmailAddress":"development@devits.aixsol.com","strFirstName":"Jinesh Shah","strLastName":"","strLoginDisplayName":"Jinesh Shah","strLoginAccountname":"jkshah","strMiddleInitial":"K","iPartnerInfoId":1,"strPortalUserName":"jkshah@analytix.com","iUserInfoId":51367,"isClientAdded":false,"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg","refresh_token":"3a582418-ea8d-487d-96a2-d79ea30e1adf","userRole":"EnumRole.enumIndiaManager","userName":"Jinesh Shah","userId":51367,"strReporter":"Arpit R. Kalariya","strTeamName":"EnumTeamName.enumSports","strJobTitle":"EnumJobTitle.enumAccountsManager","strFullName":null,"strTeamManager":null},"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ </msg>
+<msg timestamp="20220531 05:44:56.231" level="INFO">${Res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220531 05:44:51.975" endtime="20220531 05:44:56.231"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Res.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220531 05:44:56.238" level="INFO">{'responseModel': {'strEnumUserGroup': 'EnumUserGroup.enumUserGroupAixIndia', 'strEnumRole': 'EnumRole.enumIndiaManager', 'strEmailAddress': 'development@devits.aixsol.com', 'strFirstName': 'Jinesh Shah', 'strLastName': '', 'strLoginDisplayName': 'Jinesh Shah', 'strLoginAccountname': 'jkshah', 'strMiddleInitial': 'K', 'iPartnerInfoId': 1, 'strPortalUserName': 'jkshah@analytix.com', 'iUserInfoId': 51367, 'isClientAdded': False, 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'refresh_token': '3a582418-ea8d-487d-96a2-d79ea30e1adf', 'userRole': 'EnumRole.enumIndiaManager', 'userName': 'Jinesh Shah', 'userId': 51367, 'strReporter': 'Arpit R. Kalariya', 'strTeamName': 'EnumTeamName.enumSports', 'strJobTitle': 'EnumJobTitle.enumAccountsManager', 'strFullName': None, 'strTeamManager': None}, 'isSuccess': True, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': None, 'error': None}</msg>
+<status status="PASS" starttime="20220531 05:44:56.236" endtime="20220531 05:44:56.238"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${token}</var>
+<arg>${Res.json()}</arg>
+<arg>$.responseModel.access_token</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220531 05:44:56.314" level="INFO">${token} = ['eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sL...</msg>
+<status status="PASS" starttime="20220531 05:44:56.240" endtime="20220531 05:44:56.314"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${convertListToString}</var>
+<arg>"".join(${token})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220531 05:44:56.315" level="INFO">${convertListToString} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmN...</msg>
+<status status="PASS" starttime="20220531 05:44:56.315" endtime="20220531 05:44:56.315"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${test6}</var>
+<arg>${BEARER}</arg>
+<arg>${convertListToString}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220531 05:44:56.316" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
+<status status="PASS" starttime="20220531 05:44:56.316" endtime="20220531 05:44:56.316"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${test6}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220531 05:44:56.317" level="INFO">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg</msg>
+<status status="PASS" starttime="20220531 05:44:56.316" endtime="20220531 05:44:56.317"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${test6}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220531 05:44:56.317" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
+<status status="PASS" starttime="20220531 05:44:56.317" endtime="20220531 05:44:56.317"/>
+</kw>
+<status status="PASS" starttime="20220531 05:44:51.972" endtime="20220531 05:44:56.318"/>
+</test>
+<test id="s1-t2" name="Transaction To be classified Report API Health check for response code &amp; Success">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Authorization=${test6}</arg>
+<arg>customdata=${cdata}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220531 05:44:56.320" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
+<status status="PASS" starttime="20220531 05:44:56.320" endtime="20220531 05:44:56.320"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${TBD}</var>
+<arg>${BaseURL}/api/insightReview/report/transaction/transactionTobeClassified/list</arg>
+<arg>params=${parameters}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220531 05:44:57.553" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ path_url=/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
+ body=None 
+ </msg>
+<msg timestamp="20220531 05:44:57.553" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ status=200, reason=OK 
+ headers={'Content-Length': '1157', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0AV6VYgAAAACxton9qO3cSYvg9mzpldolQk9NMDJFREdFMDkwNwAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:14:57 GMT'} 
+ body={"responseModel":[{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"405","accountName":"22040 Payroll Liabilities:Social Security EE","date":"02/13/2022","dateTimeTxnDate":"2022-02-13T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33880","name":"","nameId":"","num":"PPE021322","posting":null,"memo":"Payroll Liabilities:Social Security EE","splitAccount":"22040 Payroll Liabilities:Social Security EE","splitAccountId":"405","split":"22040 Payroll Liabilities:Social Security EE","splitId":"405","amount":1488.23,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":1488.23,"taxAmount":1488.23,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1488.23,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"405","accountName":"22040 Payroll Liabilities:Social Security EE","date":"02/13/2022","dateTimeTxnDate":"2022-02-13T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33880","name":"","nameId":"","num":"PPE021322","posting":null,"memo":"Payroll Liabilities:Social Security EE","splitAccount":"22040 Payroll Liabilities:Social Security EE","splitAccountId":"405","split":"22040 Payroll Liabilities:Social Security EE","splitId":"405","amount":1488.23,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":1488.23,"taxAmount":1488.23,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":1488.23,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":62,"masterTxnStatusId":4,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"189","accountName":"12001 *Undeposited Funds","date":"03/25/2022","dateTimeTxnDate":"2022-03-25T00:00:00+00:00","transactionType":"Payment","transactionTypeId":"34154","name":"Bloomingdale Park District","nameId":"24","num":"","posting":null,"memo":"","splitAccount":"12001 *Undeposited Funds","splitAccountId":"189","split":"12001 *Undeposited Funds","splitId":"189","amount":452.00,"balance":0.0,"accountNumber":null,"createdBy":"IR Developers","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"IR Developers","paymentMethod":null,"customer":"Bloomingdale Park District","customerId":"24","employee":"","employeeId":"","adj":"No","arPay":"Paid","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":452.00,"taxAmount":452.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":452.00,"credit":0.0,"isMain":true},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":62,"masterTxnStatusId":4,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"189","accountName":"12001 *Undeposited Funds","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Deposit","transactionTypeId":"34166","name":"","nameId":"","num":"","posting":null,"memo":"","splitAccount":"12001 *Undeposited Funds","splitAccountId":"189","split":"12001 *Undeposited Funds","splitId":"189","amount":452.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"Bloomingdale Park District","customerId":"24","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":452.00,"taxAmount":452.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":452.00,"isMain":false}],"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ </msg>
+<msg timestamp="20220531 05:44:57.553" level="INFO">${TBD} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220531 05:44:56.321" endtime="20220531 05:44:57.553"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${TBD.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220531 05:44:57.566" level="INFO">{'responseModel': [{'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 59, 'masterTxnStatusId': 3, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '405', 'accountName': '22040 Payroll Liabilities:Social Security EE', 'date': '02/13/2022', 'dateTimeTxnDate': '2022-02-13T00:00:00+00:00', 'transactionType': 'Journal Entry', 'transactionTypeId': '33880', 'name': '', 'nameId': '', 'num': 'PPE021322', 'posting': None, 'memo': 'Payroll Liabilities:Social Security EE', 'splitAccount': '22040 Payroll Liabilities:Social Security EE', 'splitAccountId': '405', 'split': '22040 Payroll Liabilities:Social Security EE', 'splitId': '405', 'amount': 1488.23, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': '', 'customerId': '', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 1488.23, 'taxAmount': 1488.23, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 1488.23, 'credit': 0.0, 'isMain': False}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 59, 'masterTxnStatusId': 3, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '405', 'accountName': '22040 Payroll Liabilities:Social Security EE', 'date': '02/13/2022', 'dateTimeTxnDate': '2022-02-13T00:00:00+00:00', 'transactionType': 'Journal Entry', 'transactionTypeId': '33880', 'name': '', 'nameId': '', 'num': 'PPE021322', 'posting': None, 'memo': 'Payroll Liabilities:Social Security EE', 'splitAccount': '22040 Payroll Liabilities:Social Security EE', 'splitAccountId': '405', 'split': '22040 Payroll Liabilities:Social Security EE', 'splitId': '405', 'amount': 1488.23, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': '', 'customerId': '', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 1488.23, 'taxAmount': 1488.23, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 0.0, 'credit': 1488.23, 'isMain': False}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 62, 'masterTxnStatusId': 4, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '189', 'accountName': '12001 *Undeposited Funds', 'date': '03/25/2022', 'dateTimeTxnDate': '2022-03-25T00:00:00+00:00', 'transactionType': 'Payment', 'transactionTypeId': '34154', 'name': 'Bloomingdale Park District', 'nameId': '24', 'num': '', 'posting': None, 'memo': '', 'splitAccount': '12001 *Undeposited Funds', 'splitAccountId': '189', 'split': '12001 *Undeposited Funds', 'splitId': '189', 'amount': 452.0, 'balance': 0.0, 'accountNumber': None, 'createdBy': 'IR Developers', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': 'IR Developers', 'paymentMethod': None, 'customer': 'Bloomingdale Park District', 'customerId': '24', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': 'Paid', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 452.0, 'taxAmount': 452.0, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 452.0, 'credit': 0.0, 'isMain': True}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 62, 'masterTxnStatusId': 4, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '189', 'accountName': '12001 *Undeposited Funds', 'date': '05/17/2022', 'dateTimeTxnDate': '2022-05-17T00:00:00+00:00', 'transactionType': 'Deposit', 'transactionTypeId': '34166', 'name': '', 'nameId': '', 'num': '', 'posting': None, 'memo': '', 'splitAccount': '12001 *Undeposited Funds', 'splitAccountId': '189', 'split': '12001 *Undeposited Funds', 'splitId': '189', 'amount': 452.0, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': 'Bloomingdale Park District', 'customerId': '24', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 452.0, 'taxAmount': 452.0, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 0.0, 'credit': 452.0, 'isMain': False}], 'isSuccess': True, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': None, 'error': None}</msg>
+<status status="PASS" starttime="20220531 05:44:57.565" endtime="20220531 05:44:57.566"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${TBD_success}</var>
+<arg>${TBD.json()}</arg>
+<arg>isSuccess</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220531 05:44:57.569" level="INFO">${TBD_success} = True</msg>
+<status status="PASS" starttime="20220531 05:44:57.569" endtime="20220531 05:44:57.569"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>True</arg>
+<arg>${TBD_success}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220531 05:44:57.571" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'bool'&gt;</msg>
+<status status="PASS" starttime="20220531 05:44:57.571" endtime="20220531 05:44:57.571"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${TBD_code}</var>
+<arg>${TBD.json()}</arg>
+<arg>statusCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220531 05:44:57.573" level="INFO">${TBD_code} = 200</msg>
+<status status="PASS" starttime="20220531 05:44:57.572" endtime="20220531 05:44:57.573"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${TBD}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220531 05:44:57.574" endtime="20220531 05:44:57.575"/>
+</kw>
+<status status="PASS" starttime="20220531 05:44:56.319" endtime="20220531 05:44:57.575"/>
+</test>
+<test id="s1-t3" name="TRansaction Without Class Report API Health check for response code &amp; Success">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Authorization=${test6}</arg>
+<arg>customdata=${cdata}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220531 05:44:57.580" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
+<status status="PASS" starttime="20220531 05:44:57.579" endtime="20220531 05:44:57.580"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${WithoutClass}</var>
+<arg>${BaseURL}/api/insightReview/report/transaction/withoutClass/list</arg>
+<arg>params=${parameters}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220531 05:44:59.712" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ path_url=/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
+ body=None 
+ </msg>
+<msg timestamp="20220531 05:44:59.712" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+ status=200, reason=OK 
+ headers={'Content-Length': '2094', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0Al6VYgAAAAAeb5AJfo4+Spam3xNHloxqQk9NMDJFREdFMDkxNQAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:15:00 GMT'} 
+ body={"responseModel":[{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"410","accountName":"9999 Ask My Accountant","date":"02/10/2022","dateTimeTxnDate":"2022-02-10T00:00:00+00:00","transactionType":"Check","transactionTypeId":"5936","name":"Becce Scholten","nameId":"7","num":"ACH Debit","posting":null,"memo":"ORIG CO NAME:Lil Kickers, Inc       ORIG ID:1810824338 DESC DATE:       CO ENTRY DESCR:ACH CollecSEC:CCD    TRACE#:125008016439754 EED:220210   IND ID:2234011                      IND NAME:LK","splitAccount":"9999 Ask My Accountant","splitAccountId":"410","split":"9999 Ask My Accountant","splitId":"410","amount":7635.36,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"Becce Scholten","customerId":"7","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":7635.36,"taxAmount":7635.36,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":7635.36,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"386","accountName":"83500 Operating Expenses:Office Expenses","date":"03/10/2022","dateTimeTxnDate":"2022-03-10T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"34152","name":"","nameId":"","num":"2","posting":null,"memo":"","splitAccount":"83500 Operating Expenses:Office Expenses","splitAccountId":"386","split":"83500 Operating Expenses:Office Expenses","splitId":"386","amount":100.00,"balance":0.0,"accountNumber":null,"createdBy":"IR Developers","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"IR Developers","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":100.00,"taxAmount":100.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":100.00,"credit":0.0,"isMain":true},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"165","accountName":"61700 Bad Debt Expense","date":"04/26/2022","dateTimeTxnDate":"2022-04-26T00:00:00+00:00","transactionType":"Check","transactionTypeId":"34160","name":"1-800-Flowers.com,INC","nameId":"172","num":"","posting":null,"memo":"","splitAccount":"61700 Bad Debt Expense","splitAccountId":"165","split":"61700 Bad Debt Expense","splitId":"165","amount":52.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"1-800-Flowers.com,INC","vendorId":"172","taxableAmount":52.00,"taxAmount":52.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":52.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"510","accountName":"61800 Customer Balance Offset","date":"04/26/2022","dateTimeTxnDate":"2022-04-26T00:00:00+00:00","transactionType":"Check","transactionTypeId":"34160","name":"1-800-Flowers.com,INC","nameId":"172","num":"","posting":null,"memo":"","splitAccount":"61800 Customer Balance Offset","splitAccountId":"510","split":"61800 Customer Balance Offset","splitId":"510","amount":85.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"1-800-Flowers.com,INC","vendorId":"172","taxableAmount":85.00,"taxAmount":85.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":85.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"630","accountName":"Uncategorized Expense","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34161","name":"7-Eleven","nameId":"421","num":"124","posting":null,"memo":"Telephone expense","splitAccount":"Uncategorized Expense","splitAccountId":"630","split":"Uncategorized Expense","splitId":"630","amount":1500.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"7-Eleven","vendorId":"421","taxableAmount":1500.00,"taxAmount":1500.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1500.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"624","accountName":"Marketing Service","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Invoice","transactionTypeId":"34162","name":"A/R","nameId":"26","num":"1002","posting":null,"memo":"Test","splitAccount":"Marketing Service","splitAccountId":"624","split":"Marketing Service","splitId":"624","amount":1255.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"A/R","customerId":"26","employee":"","employeeId":"","adj":"No","arPay":"Paid","product_Service_Name":"Sales","lastModified":null,"qty":"-1.00","rate":"1255.00","vendor":"","vendorId":"","taxableAmount":1255.00,"taxAmount":1255.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":1255.00,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"386","accountName":"83500 Operating Expenses:Office Expenses","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34164","name":"Andrew Smith","nameId":"666","num":"","posting":null,"memo":"Test","splitAccount":"83500 Operating Expenses:Office Expenses","splitAccountId":"386","split":"83500 Operating Expenses:Office Expenses","splitId":"386","amount":1299.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"Andrew Smith","vendorId":"666","taxableAmount":1299.00,"taxAmount":1299.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1299.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"606","accountName":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34164","name":"Andrew Smith","nameId":"666","num":"","posting":null,"memo":"test","splitAccount":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","splitAccountId":"606","split":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","splitId":"606","amount":123.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"Andrew Smith","vendorId":"666","taxableAmount":123.00,"taxAmount":123.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":123.00,"credit":0.0,"isMain":false}],"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ </msg>
+<msg timestamp="20220531 05:44:59.712" level="INFO">${WithoutClass} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220531 05:44:57.581" endtime="20220531 05:44:59.712"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${wc_success}</var>
+<arg>${WithoutClass.json()}</arg>
+<arg>isSuccess</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220531 05:44:59.720" level="INFO">${wc_success} = True</msg>
+<status status="PASS" starttime="20220531 05:44:59.719" endtime="20220531 05:44:59.720"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>True</arg>
+<arg>${wc_success}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220531 05:44:59.726" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'bool'&gt;</msg>
+<status status="PASS" starttime="20220531 05:44:59.724" endtime="20220531 05:44:59.726"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${WC_code}</var>
+<arg>${WithoutClass.json()}</arg>
+<arg>statusCode</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220531 05:44:59.728" level="INFO">${WC_code} = 200</msg>
+<status status="PASS" starttime="20220531 05:44:59.727" endtime="20220531 05:44:59.728"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220531 05:44:59.732" endtime="20220531 05:44:59.733"/>
+</kw>
+<status status="PASS" starttime="20220531 05:44:57.578" endtime="20220531 05:44:59.733"/>
+</test>
+<doc>Test doc</doc>
+<status status="PASS" starttime="20220531 05:44:51.599" endtime="20220531 05:44:59.739"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="FetchToken">FetchToken</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
