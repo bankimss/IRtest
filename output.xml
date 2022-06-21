@@ -1,85 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220531 05:44:51.597" rpa="false" schemaversion="2">
-<suite id="s1" name="FetchToken" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING\FetchToken.robot">
-<test id="s1-t1" name="Geneareta the token using authenticate so that Request chaining can be used">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220621 11:50:44.335" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcases" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases">
+<suite id="s1-s1" name="APITESTING" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING">
+<suite id="s1-s1-s1" name="FetchToken" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING\FetchToken.robot">
+<test id="s1-s1-s1-t1" name="Geneareta the token using authenticate so that Request chaining can be used">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{REQ_data}</var>
 <arg>Email=jkshah@analytix.com</arg>
 <arg>Password=Analytix@123</arg>
 <arg>IssSelfOnBoard=false</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220531 05:44:51.974" level="INFO">&amp;{REQ_data} = { Email=jkshah@analytix.com | Password=Analytix@123 | IssSelfOnBoard=false }</msg>
-<status status="PASS" starttime="20220531 05:44:51.973" endtime="20220531 05:44:51.974"/>
+<msg timestamp="20220621 11:50:44.900" level="INFO">&amp;{REQ_data} = { Email=jkshah@analytix.com | Password=Analytix@123 | IssSelfOnBoard=false }</msg>
+<status status="PASS" starttime="20220621 11:50:44.899" endtime="20220621 11:50:44.900"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${Res}</var>
 <arg>${BaseURL}/api/Authentication/Authenticate</arg>
 <arg>json=${REQ_data}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220531 05:44:56.231" level="INFO">POST Request : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
+<msg timestamp="20220621 11:50:48.776" level="INFO">POST Request : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
  path_url=/api/Authentication/Authenticate 
  headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '87', 'Content-Type': 'application/json'} 
  body=b'{"Email": "jkshah@analytix.com", "Password": "Analytix@123", "IssSelfOnBoard": "false"}' 
  </msg>
-<msg timestamp="20220531 05:44:56.231" level="INFO">POST Response : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
+<msg timestamp="20220621 11:50:48.777" level="INFO">POST Response : url=https://insightreviewapi.aixsol.com/api/Authentication/Authenticate 
  status=200, reason=OK 
- headers={'Content-Length': '949', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0/V2VYgAAAACd/3mmReM7TonVURpHHgqQQk9NMDJFREdFMDkxOQAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:14:56 GMT'} 
- body={"responseModel":{"strEnumUserGroup":"EnumUserGroup.enumUserGroupAixIndia","strEnumRole":"EnumRole.enumIndiaManager","strEmailAddress":"development@devits.aixsol.com","strFirstName":"Jinesh Shah","strLastName":"","strLoginDisplayName":"Jinesh Shah","strLoginAccountname":"jkshah","strMiddleInitial":"K","iPartnerInfoId":1,"strPortalUserName":"jkshah@analytix.com","iUserInfoId":51367,"isClientAdded":false,"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg","refresh_token":"3a582418-ea8d-487d-96a2-d79ea30e1adf","userRole":"EnumRole.enumIndiaManager","userName":"Jinesh Shah","userId":51367,"strReporter":"Arpit R. Kalariya","strTeamName":"EnumTeamName.enumSports","strJobTitle":"EnumJobTitle.enumAccountsManager","strFullName":null,"strTeamManager":null},"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ headers={'Content-Length': '948', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0PWOxYgAAAAAYCMF6y7oMSKYtFAunvwBzQk9NMDJFREdFMDgwOAAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 21 Jun 2022 06:20:47 GMT'} 
+ body={"responseModel":{"strEnumUserGroup":"EnumUserGroup.enumUserGroupAixIndia","strEnumRole":"EnumRole.enumIndiaManager","strEmailAddress":"development@devits.aixsol.com","strFirstName":"Jinesh Shah","strLastName":"","strLoginDisplayName":"Jinesh Shah","strLoginAccountname":"jkshah","strMiddleInitial":"K","iPartnerInfoId":1,"strPortalUserName":"jkshah@analytix.com","iUserInfoId":51367,"isClientAdded":false,"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1NTc5MjQ0OCwiZXhwIjoxNjU1ODAzMjQ4LCJpYXQiOjE2NTU3OTI0NDgsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.Tcm1gggfpc0og_u1XkN75FPo-tk7qIgcwO6fyXjOu7I","refresh_token":"2b5b03c8-1c45-4788-9ffe-0a51d1bced7c","userRole":"EnumRole.enumIndiaManager","userName":"Jinesh Shah","userId":51367,"strReporter":"Arpit R. Kalariya","strTeamName":"EnumTeamName.enumSports","strJobTitle":"EnumJobTitle.enumAccountsManager","strFullName":null,"strTeamManager":null},"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
  </msg>
-<msg timestamp="20220531 05:44:56.231" level="INFO">${Res} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220531 05:44:51.975" endtime="20220531 05:44:56.231"/>
+<msg timestamp="20220621 11:50:48.777" level="INFO">${Res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220621 11:50:44.900" endtime="20220621 11:50:48.777"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${Res.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220531 05:44:56.238" level="INFO">{'responseModel': {'strEnumUserGroup': 'EnumUserGroup.enumUserGroupAixIndia', 'strEnumRole': 'EnumRole.enumIndiaManager', 'strEmailAddress': 'development@devits.aixsol.com', 'strFirstName': 'Jinesh Shah', 'strLastName': '', 'strLoginDisplayName': 'Jinesh Shah', 'strLoginAccountname': 'jkshah', 'strMiddleInitial': 'K', 'iPartnerInfoId': 1, 'strPortalUserName': 'jkshah@analytix.com', 'iUserInfoId': 51367, 'isClientAdded': False, 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'refresh_token': '3a582418-ea8d-487d-96a2-d79ea30e1adf', 'userRole': 'EnumRole.enumIndiaManager', 'userName': 'Jinesh Shah', 'userId': 51367, 'strReporter': 'Arpit R. Kalariya', 'strTeamName': 'EnumTeamName.enumSports', 'strJobTitle': 'EnumJobTitle.enumAccountsManager', 'strFullName': None, 'strTeamManager': None}, 'isSuccess': True, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': None, 'error': None}</msg>
-<status status="PASS" starttime="20220531 05:44:56.236" endtime="20220531 05:44:56.238"/>
+<msg timestamp="20220621 11:50:48.778" level="INFO">{'responseModel': {'strEnumUserGroup': 'EnumUserGroup.enumUserGroupAixIndia', 'strEnumRole': 'EnumRole.enumIndiaManager', 'strEmailAddress': 'development@devits.aixsol.com', 'strFirstName': 'Jinesh Shah', 'strLastName': '', 'strLoginDisplayName': 'Jinesh Shah', 'strLoginAccountname': 'jkshah', 'strMiddleInitial': 'K', 'iPartnerInfoId': 1, 'strPortalUserName': 'jkshah@analytix.com', 'iUserInfoId': 51367, 'isClientAdded': False, 'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1NTc5MjQ0OCwiZXhwIjoxNjU1ODAzMjQ4LCJpYXQiOjE2NTU3OTI0NDgsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.Tcm1gggfpc0og_u1XkN75FPo-tk7qIgcwO6fyXjOu7I', 'refresh_token': '2b5b03c8-1c45-4788-9ffe-0a51d1bced7c', 'userRole': 'EnumRole.enumIndiaManager', 'userName': 'Jinesh Shah', 'userId': 51367, 'strReporter': 'Arpit R. Kalariya', 'strTeamName': 'EnumTeamName.enumSports', 'strJobTitle': 'EnumJobTitle.enumAccountsManager', 'strFullName': None, 'strTeamManager': None}, 'isSuccess': True, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': None, 'error': None}</msg>
+<status status="PASS" starttime="20220621 11:50:48.777" endtime="20220621 11:50:48.778"/>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <var>${token}</var>
 <arg>${Res.json()}</arg>
 <arg>$.responseModel.access_token</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20220531 05:44:56.314" level="INFO">${token} = ['eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sL...</msg>
-<status status="PASS" starttime="20220531 05:44:56.240" endtime="20220531 05:44:56.314"/>
+<msg timestamp="20220621 11:50:48.823" level="INFO">${token} = ['eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sL...</msg>
+<status status="PASS" starttime="20220621 11:50:48.779" endtime="20220621 11:50:48.823"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${convertListToString}</var>
 <arg>"".join(${token})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220531 05:44:56.315" level="INFO">${convertListToString} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmN...</msg>
-<status status="PASS" starttime="20220531 05:44:56.315" endtime="20220531 05:44:56.315"/>
+<msg timestamp="20220621 11:50:48.823" level="INFO">${convertListToString} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmN...</msg>
+<status status="PASS" starttime="20220621 11:50:48.823" endtime="20220621 11:50:48.823"/>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <var>${test6}</var>
 <arg>${BEARER}</arg>
 <arg>${convertListToString}</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20220531 05:44:56.316" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
-<status status="PASS" starttime="20220531 05:44:56.316" endtime="20220531 05:44:56.316"/>
+<msg timestamp="20220621 11:50:48.824" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
+<status status="PASS" starttime="20220621 11:50:48.823" endtime="20220621 11:50:48.824"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${test6}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220531 05:44:56.317" level="INFO">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg</msg>
-<status status="PASS" starttime="20220531 05:44:56.316" endtime="20220531 05:44:56.317"/>
+<msg timestamp="20220621 11:50:48.824" level="INFO">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1NTc5MjQ0OCwiZXhwIjoxNjU1ODAzMjQ4LCJpYXQiOjE2NTU3OTI0NDgsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.Tcm1gggfpc0og_u1XkN75FPo-tk7qIgcwO6fyXjOu7I</msg>
+<status status="PASS" starttime="20220621 11:50:48.824" endtime="20220621 11:50:48.824"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${test6}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220531 05:44:56.317" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
-<status status="PASS" starttime="20220531 05:44:56.317" endtime="20220531 05:44:56.317"/>
+<msg timestamp="20220621 11:50:48.824" level="INFO">${test6} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4...</msg>
+<status status="PASS" starttime="20220621 11:50:48.824" endtime="20220621 11:50:48.824"/>
 </kw>
-<status status="PASS" starttime="20220531 05:44:51.972" endtime="20220531 05:44:56.318"/>
+<status status="PASS" starttime="20220621 11:50:44.899" endtime="20220621 11:50:48.825"/>
 </test>
-<test id="s1-t2" name="Transaction To be classified Report API Health check for response code &amp; Success">
+<test id="s1-s1-s1-t2" name="Transaction To be classified Report API Health check for response code &amp; Success">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{headers}</var>
 <arg>Authorization=${test6}</arg>
 <arg>customdata=${cdata}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220531 05:44:56.320" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
-<status status="PASS" starttime="20220531 05:44:56.320" endtime="20220531 05:44:56.320"/>
+<msg timestamp="20220621 11:50:48.826" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
+<status status="PASS" starttime="20220621 11:50:48.825" endtime="20220621 11:50:48.826"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${TBD}</var>
@@ -87,66 +89,66 @@
 <arg>params=${parameters}</arg>
 <arg>headers=${headers}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220531 05:44:57.553" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+<msg timestamp="20220621 11:50:50.204" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
  path_url=/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1NTc5MjQ0OCwiZXhwIjoxNjU1ODAzMjQ4LCJpYXQiOjE2NTU3OTI0NDgsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.Tcm1gggfpc0og_u1XkN75FPo-tk7qIgcwO6fyXjOu7I', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
  body=None 
  </msg>
-<msg timestamp="20220531 05:44:57.553" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+<msg timestamp="20220621 11:50:50.205" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/transactionTobeClassified/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
  status=200, reason=OK 
- headers={'Content-Length': '1157', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0AV6VYgAAAACxton9qO3cSYvg9mzpldolQk9NMDJFREdFMDkwNwAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:14:57 GMT'} 
- body={"responseModel":[{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"405","accountName":"22040 Payroll Liabilities:Social Security EE","date":"02/13/2022","dateTimeTxnDate":"2022-02-13T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33880","name":"","nameId":"","num":"PPE021322","posting":null,"memo":"Payroll Liabilities:Social Security EE","splitAccount":"22040 Payroll Liabilities:Social Security EE","splitAccountId":"405","split":"22040 Payroll Liabilities:Social Security EE","splitId":"405","amount":1488.23,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":1488.23,"taxAmount":1488.23,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1488.23,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"405","accountName":"22040 Payroll Liabilities:Social Security EE","date":"02/13/2022","dateTimeTxnDate":"2022-02-13T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33880","name":"","nameId":"","num":"PPE021322","posting":null,"memo":"Payroll Liabilities:Social Security EE","splitAccount":"22040 Payroll Liabilities:Social Security EE","splitAccountId":"405","split":"22040 Payroll Liabilities:Social Security EE","splitId":"405","amount":1488.23,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":1488.23,"taxAmount":1488.23,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":1488.23,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":62,"masterTxnStatusId":4,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"189","accountName":"12001 *Undeposited Funds","date":"03/25/2022","dateTimeTxnDate":"2022-03-25T00:00:00+00:00","transactionType":"Payment","transactionTypeId":"34154","name":"Bloomingdale Park District","nameId":"24","num":"","posting":null,"memo":"","splitAccount":"12001 *Undeposited Funds","splitAccountId":"189","split":"12001 *Undeposited Funds","splitId":"189","amount":452.00,"balance":0.0,"accountNumber":null,"createdBy":"IR Developers","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"IR Developers","paymentMethod":null,"customer":"Bloomingdale Park District","customerId":"24","employee":"","employeeId":"","adj":"No","arPay":"Paid","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":452.00,"taxAmount":452.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":452.00,"credit":0.0,"isMain":true},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":62,"masterTxnStatusId":4,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"189","accountName":"12001 *Undeposited Funds","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Deposit","transactionTypeId":"34166","name":"","nameId":"","num":"","posting":null,"memo":"","splitAccount":"12001 *Undeposited Funds","splitAccountId":"189","split":"12001 *Undeposited Funds","splitId":"189","amount":452.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"Bloomingdale Park District","customerId":"24","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":452.00,"taxAmount":452.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":452.00,"isMain":false}],"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ headers={'Content-Length': '268', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0QGOxYgAAAADYInuQqCMIR7gHhTlAR94VQk9NMDJFREdFMDkxNgAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 21 Jun 2022 06:20:49 GMT'} 
+ body={"responseModel":[],"isSuccess":false,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":"Please map Accounts from the global rule configuration to get the data","error":null} 
  </msg>
-<msg timestamp="20220531 05:44:57.553" level="INFO">${TBD} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220531 05:44:56.321" endtime="20220531 05:44:57.553"/>
+<msg timestamp="20220621 11:50:50.205" level="INFO">${TBD} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220621 11:50:48.826" endtime="20220621 11:50:50.205"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${TBD.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220531 05:44:57.566" level="INFO">{'responseModel': [{'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 59, 'masterTxnStatusId': 3, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '405', 'accountName': '22040 Payroll Liabilities:Social Security EE', 'date': '02/13/2022', 'dateTimeTxnDate': '2022-02-13T00:00:00+00:00', 'transactionType': 'Journal Entry', 'transactionTypeId': '33880', 'name': '', 'nameId': '', 'num': 'PPE021322', 'posting': None, 'memo': 'Payroll Liabilities:Social Security EE', 'splitAccount': '22040 Payroll Liabilities:Social Security EE', 'splitAccountId': '405', 'split': '22040 Payroll Liabilities:Social Security EE', 'splitId': '405', 'amount': 1488.23, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': '', 'customerId': '', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 1488.23, 'taxAmount': 1488.23, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 1488.23, 'credit': 0.0, 'isMain': False}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 59, 'masterTxnStatusId': 3, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '405', 'accountName': '22040 Payroll Liabilities:Social Security EE', 'date': '02/13/2022', 'dateTimeTxnDate': '2022-02-13T00:00:00+00:00', 'transactionType': 'Journal Entry', 'transactionTypeId': '33880', 'name': '', 'nameId': '', 'num': 'PPE021322', 'posting': None, 'memo': 'Payroll Liabilities:Social Security EE', 'splitAccount': '22040 Payroll Liabilities:Social Security EE', 'splitAccountId': '405', 'split': '22040 Payroll Liabilities:Social Security EE', 'splitId': '405', 'amount': 1488.23, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': '', 'customerId': '', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 1488.23, 'taxAmount': 1488.23, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 0.0, 'credit': 1488.23, 'isMain': False}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 62, 'masterTxnStatusId': 4, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '189', 'accountName': '12001 *Undeposited Funds', 'date': '03/25/2022', 'dateTimeTxnDate': '2022-03-25T00:00:00+00:00', 'transactionType': 'Payment', 'transactionTypeId': '34154', 'name': 'Bloomingdale Park District', 'nameId': '24', 'num': '', 'posting': None, 'memo': '', 'splitAccount': '12001 *Undeposited Funds', 'splitAccountId': '189', 'split': '12001 *Undeposited Funds', 'splitId': '189', 'amount': 452.0, 'balance': 0.0, 'accountNumber': None, 'createdBy': 'IR Developers', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': 'IR Developers', 'paymentMethod': None, 'customer': 'Bloomingdale Park District', 'customerId': '24', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': 'Paid', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 452.0, 'taxAmount': 452.0, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 452.0, 'credit': 0.0, 'isMain': True}, {'category': None, 'pastDue': 0, 'daysPastDue': None, 'columnIndex': 0, 'txnStatus': 62, 'masterTxnStatusId': 4, 'reportStatusId': 0, 'isTxnStatus': True, 'smallAmount': 0.0, 'transactionalMonthCount': 0, 'transactionalMonthAmount': 0, 'transactionalMonth': 0, 'accountId': '189', 'accountName': '12001 *Undeposited Funds', 'date': '05/17/2022', 'dateTimeTxnDate': '2022-05-17T00:00:00+00:00', 'transactionType': 'Deposit', 'transactionTypeId': '34166', 'name': '', 'nameId': '', 'num': '', 'posting': None, 'memo': '', 'splitAccount': '12001 *Undeposited Funds', 'splitAccountId': '189', 'split': '12001 *Undeposited Funds', 'splitId': '189', 'amount': 452.0, 'balance': 0.0, 'accountNumber': None, 'createdBy': '', 'createDate': None, 'customerOrVendorMesssage': None, 'dueDate': '', 'invoiceDate': None, 'apPay': '', 'clr': '', 'lastModifiedBy': '', 'paymentMethod': None, 'customer': 'Bloomingdale Park District', 'customerId': '24', 'employee': '', 'employeeId': '', 'adj': 'No', 'arPay': '', 'product_Service_Name': '', 'lastModified': None, 'qty': '', 'rate': '', 'vendor': '', 'vendorId': '', 'taxableAmount': 452.0, 'taxAmount': 452.0, 'taxName': None, 'class': '', 'classId': '', 'location': '', 'locationId': '', 'debit': 0.0, 'credit': 452.0, 'isMain': False}], 'isSuccess': True, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': None, 'error': None}</msg>
-<status status="PASS" starttime="20220531 05:44:57.565" endtime="20220531 05:44:57.566"/>
+<msg timestamp="20220621 11:50:50.206" level="INFO">{'responseModel': [], 'isSuccess': False, 'isExceptionOccured': False, 'status': 'Success', 'errorCode': 0, 'statusCode': 200, 'message': 'Please map Accounts from the global rule configuration to get the data', 'error': None}</msg>
+<status status="PASS" starttime="20220621 11:50:50.205" endtime="20220621 11:50:50.206"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${TBD_success}</var>
 <arg>${TBD.json()}</arg>
 <arg>isSuccess</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220531 05:44:57.569" level="INFO">${TBD_success} = True</msg>
-<status status="PASS" starttime="20220531 05:44:57.569" endtime="20220531 05:44:57.569"/>
+<msg timestamp="20220621 11:50:50.207" level="INFO">${TBD_success} = False</msg>
+<status status="PASS" starttime="20220621 11:50:50.207" endtime="20220621 11:50:50.208"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>True</arg>
 <arg>${TBD_success}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220531 05:44:57.571" level="INFO">Argument types are:
+<msg timestamp="20220621 11:50:50.208" level="INFO">Argument types are:
 &lt;type 'unicode'&gt;
 &lt;class 'bool'&gt;</msg>
-<status status="PASS" starttime="20220531 05:44:57.571" endtime="20220531 05:44:57.571"/>
+<msg timestamp="20220621 11:50:50.209" level="FAIL">True != False</msg>
+<status status="FAIL" starttime="20220621 11:50:50.208" endtime="20220621 11:50:50.209"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${TBD_code}</var>
 <arg>${TBD.json()}</arg>
 <arg>statusCode</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220531 05:44:57.573" level="INFO">${TBD_code} = 200</msg>
-<status status="PASS" starttime="20220531 05:44:57.572" endtime="20220531 05:44:57.573"/>
+<status status="NOT RUN" starttime="20220621 11:50:50.209" endtime="20220621 11:50:50.209"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <arg>${TBD}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220531 05:44:57.574" endtime="20220531 05:44:57.575"/>
+<status status="NOT RUN" starttime="20220621 11:50:50.209" endtime="20220621 11:50:50.209"/>
 </kw>
-<status status="PASS" starttime="20220531 05:44:56.319" endtime="20220531 05:44:57.575"/>
+<status status="FAIL" starttime="20220621 11:50:48.825" endtime="20220621 11:50:50.210">True != False</status>
 </test>
-<test id="s1-t3" name="TRansaction Without Class Report API Health check for response code &amp; Success">
+<test id="s1-s1-s1-t3" name="TRansaction Without Class Report API Health check for response code &amp; Success">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{headers}</var>
 <arg>Authorization=${test6}</arg>
 <arg>customdata=${cdata}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220531 05:44:57.580" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
-<status status="PASS" starttime="20220531 05:44:57.579" endtime="20220531 05:44:57.580"/>
+<msg timestamp="20220621 11:50:50.212" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVu...</msg>
+<status status="PASS" starttime="20220621 11:50:50.211" endtime="20220621 11:50:50.212"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${WithoutClass}</var>
@@ -154,62 +156,309 @@
 <arg>params=${parameters}</arg>
 <arg>headers=${headers}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220531 05:44:59.712" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+<msg timestamp="20220621 11:50:51.278" level="INFO">GET Request : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
  path_url=/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1Mzk1NjA5NiwiZXhwIjoxNjUzOTY2ODk2LCJpYXQiOjE2NTM5NTYwOTYsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.sVIdeNSe0trlBjLryXq2Yj3Ljofje0f8qcLtcs3OPLg', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
+ headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI1MTM2NyIsIlVzZXJOYW1lIjoiSmluZXNoIFNoYWgiLCJVc2VyUm9sZSI6IkVudW1Sb2xlLmVudW1JbmRpYU1hbmFnZXIiLCJVc2VyRW1haWwiOiJkZXZlbG9wbWVudEBkZXZpdHMuYWl4c29sLmNvbSIsIm5iZiI6MTY1NTc5MjQ0OCwiZXhwIjoxNjU1ODAzMjQ4LCJpYXQiOjE2NTU3OTI0NDgsImlzcyI6IkFuYWx5dGl4SW5zaWdodFJldmlld0FwcFN0YWdpbmcifQ.Tcm1gggfpc0og_u1XkN75FPo-tk7qIgcwO6fyXjOu7I', 'customdata': '{"iEntityInfoId":3721,"iPartnerInfoId":1,"strCompanyNameId":"GEN_AIX_ANA_610666","strCompanyName":"Analytix Business Solutions (India)","strEntityDisplayName":"Analytix Business Solutions - India","strCompanyNameId_AIX":"-","strAccountSystem":"QuickBooks Online"}'} 
  body=None 
  </msg>
-<msg timestamp="20220531 05:44:59.712" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
+<msg timestamp="20220621 11:50:51.279" level="INFO">GET Response : url=https://insightreviewapi.aixsol.com/api/insightReview/report/transaction/withoutClass/list?startDate=2022-01-01&amp;endDate=2022-05-30&amp;strselectedDisplayTransactionStataus=0&amp;iReportAssignmentId=0 
  status=200, reason=OK 
- headers={'Content-Length': '2094', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0Al6VYgAAAAAeb5AJfo4+Spam3xNHloxqQk9NMDJFREdFMDkxNQAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 31 May 2022 00:15:00 GMT'} 
- body={"responseModel":[{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"410","accountName":"9999 Ask My Accountant","date":"02/10/2022","dateTimeTxnDate":"2022-02-10T00:00:00+00:00","transactionType":"Check","transactionTypeId":"5936","name":"Becce Scholten","nameId":"7","num":"ACH Debit","posting":null,"memo":"ORIG CO NAME:Lil Kickers, Inc       ORIG ID:1810824338 DESC DATE:       CO ENTRY DESCR:ACH CollecSEC:CCD    TRACE#:125008016439754 EED:220210   IND ID:2234011                      IND NAME:LK","splitAccount":"9999 Ask My Accountant","splitAccountId":"410","split":"9999 Ask My Accountant","splitId":"410","amount":7635.36,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"Becce Scholten","customerId":"7","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":7635.36,"taxAmount":7635.36,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":7635.36,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":59,"masterTxnStatusId":3,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"386","accountName":"83500 Operating Expenses:Office Expenses","date":"03/10/2022","dateTimeTxnDate":"2022-03-10T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"34152","name":"","nameId":"","num":"2","posting":null,"memo":"","splitAccount":"83500 Operating Expenses:Office Expenses","splitAccountId":"386","split":"83500 Operating Expenses:Office Expenses","splitId":"386","amount":100.00,"balance":0.0,"accountNumber":null,"createdBy":"IR Developers","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"IR Developers","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":100.00,"taxAmount":100.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":100.00,"credit":0.0,"isMain":true},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"165","accountName":"61700 Bad Debt Expense","date":"04/26/2022","dateTimeTxnDate":"2022-04-26T00:00:00+00:00","transactionType":"Check","transactionTypeId":"34160","name":"1-800-Flowers.com,INC","nameId":"172","num":"","posting":null,"memo":"","splitAccount":"61700 Bad Debt Expense","splitAccountId":"165","split":"61700 Bad Debt Expense","splitId":"165","amount":52.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"1-800-Flowers.com,INC","vendorId":"172","taxableAmount":52.00,"taxAmount":52.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":52.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"510","accountName":"61800 Customer Balance Offset","date":"04/26/2022","dateTimeTxnDate":"2022-04-26T00:00:00+00:00","transactionType":"Check","transactionTypeId":"34160","name":"1-800-Flowers.com,INC","nameId":"172","num":"","posting":null,"memo":"","splitAccount":"61800 Customer Balance Offset","splitAccountId":"510","split":"61800 Customer Balance Offset","splitId":"510","amount":85.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"1-800-Flowers.com,INC","vendorId":"172","taxableAmount":85.00,"taxAmount":85.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":85.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"630","accountName":"Uncategorized Expense","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34161","name":"7-Eleven","nameId":"421","num":"124","posting":null,"memo":"Telephone expense","splitAccount":"Uncategorized Expense","splitAccountId":"630","split":"Uncategorized Expense","splitId":"630","amount":1500.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"7-Eleven","vendorId":"421","taxableAmount":1500.00,"taxAmount":1500.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1500.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"624","accountName":"Marketing Service","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Invoice","transactionTypeId":"34162","name":"A/R","nameId":"26","num":"1002","posting":null,"memo":"Test","splitAccount":"Marketing Service","splitAccountId":"624","split":"Marketing Service","splitId":"624","amount":1255.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"A/R","customerId":"26","employee":"","employeeId":"","adj":"No","arPay":"Paid","product_Service_Name":"Sales","lastModified":null,"qty":"-1.00","rate":"1255.00","vendor":"","vendorId":"","taxableAmount":1255.00,"taxAmount":1255.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":1255.00,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"386","accountName":"83500 Operating Expenses:Office Expenses","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34164","name":"Andrew Smith","nameId":"666","num":"","posting":null,"memo":"Test","splitAccount":"83500 Operating Expenses:Office Expenses","splitAccountId":"386","split":"83500 Operating Expenses:Office Expenses","splitId":"386","amount":1299.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"Andrew Smith","vendorId":"666","taxableAmount":1299.00,"taxAmount":1299.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1299.00,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"606","accountName":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","date":"05/17/2022","dateTimeTxnDate":"2022-05-17T00:00:00+00:00","transactionType":"Expense","transactionTypeId":"34164","name":"Andrew Smith","nameId":"666","num":"","posting":null,"memo":"test","splitAccount":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","splitAccountId":"606","split":"61310 Program Expenses:Additional Expenses:Miscellaneous Expenses","splitId":"606","amount":123.00,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"Andrew Smith","vendorId":"666","taxableAmount":123.00,"taxAmount":123.00,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":123.00,"credit":0.0,"isMain":false}],"isSuccess":true,"isExceptionOccured":false,"status":"Success","errorCode":0,"statusCode":200,"message":null,"error":null} 
+ headers={'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json; charset=utf-8', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Request-Context': 'appId=cid-v1:8a8873f9-ba5c-4444-bf58-70c2fb770677', 'Strict-Transport-Security': 'max-age=2592000', 'X-Powered-By': 'ASP.NET', 'X-Cache': 'CONFIG_NOCACHE', 'X-Azure-Ref': '0QmOxYgAAAADah1XxN33vRbf5wQSg9LfkQk9NMDJFREdFMDkxNgAxMmFiMzUxZS1iYjQ4LTQwM2YtODJjYy1lMzcyMjM3OTdiNDQ=', 'Date': 'Tue, 21 Jun 2022 06:20:50 GMT'} 
+ body={"responseModel":[{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":58,"masterTxnStatusId":1,"reportStatusId":0,"isTxnStatus":true,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"","accountName":"","date":"01/01/2022","dateTimeTxnDate":"2022-01-01T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33623","name":"","nameId":"","num":"Prep 01/22","posting":null,"memo":"","splitAccount":"","splitAccountId":"","split":"","splitId":"","amount":0.0,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":0.0,"taxAmount":0.0,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":0.0,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"36","accountName":"22000 Payroll Liabilities","date":"01/02/2022","dateTimeTxnDate":"2022-01-02T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33490","name":"","nameId":"","num":"PPE 010222","posting":null,"memo":"Payroll Liabilities","splitAccount":"22000 Payroll Liabilities","splitAccountId":"36","split":"22000 Payroll Liabilities","splitId":"36","amount":184.61,"balance":0.0,"accountNumber":null,"createdBy":"Import Administration","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"Import Administration","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":184.61,"taxAmount":184.61,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":184.61,"credit":0.0,"isMain":true},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"36","accountName":"22000 Payroll Liabilities","date":"01/02/2022","dateTimeTxnDate":"2022-01-02T00:00:00+00:00","transactionType":"Journal Entry","transactionTypeId":"33490","name":"","nameId":"","num":"PPE 010222","posting":null,"memo":"Payroll Liabilities","splitAccount":"22000 Payroll Liabilities","splitAccountId":"36","split":"22000 Payroll Liabilities","splitId":"36","amount":1338.86,"balance":0.0,"accountNumber":null,"createdBy":"","createDate":null,"customerOrVendorMesssage":null,"dueDate":"","invoiceDate":null,"apPay":"","clr":"","lastModifiedBy":"","paymentMethod":null,"customer":"","customerId":"","employee":"","employeeId":"","adj":"No","arPay":"","product_Service_Name":"","lastModified":null,"qty":"","rate":"","vendor":"","vendorId":"","taxableAmount":1338.86,"taxAmount":1338.86,"taxName":null,"class":"","classId":"","location":"","locationId":"","debit":1338.86,"credit":0.0,"isMain":false},{"category":null,"pastDue":0,"daysPastDue":null,"columnIndex":0,"txnStatus":0,"masterTxnStatusId":0,"reportStatusId":0,"isTxnStatus":false,"smallAmount":0.0,"transactionalMonthCount":0,"transactionalMonthAmount":0,"transactionalMonth":0,"accountId":"402","account... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg timestamp="20220531 05:44:59.712" level="INFO">${WithoutClass} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220531 05:44:57.581" endtime="20220531 05:44:59.712"/>
+<msg timestamp="20220621 11:50:51.280" level="INFO">${WithoutClass} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220621 11:50:50.212" endtime="20220621 11:50:51.280"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${wc_success}</var>
 <arg>${WithoutClass.json()}</arg>
 <arg>isSuccess</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220531 05:44:59.720" level="INFO">${wc_success} = True</msg>
-<status status="PASS" starttime="20220531 05:44:59.719" endtime="20220531 05:44:59.720"/>
+<msg timestamp="20220621 11:50:51.287" level="INFO">${wc_success} = True</msg>
+<status status="PASS" starttime="20220621 11:50:51.281" endtime="20220621 11:50:51.287"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>True</arg>
 <arg>${wc_success}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220531 05:44:59.726" level="INFO">Argument types are:
+<msg timestamp="20220621 11:50:51.287" level="INFO">Argument types are:
 &lt;type 'unicode'&gt;
 &lt;class 'bool'&gt;</msg>
-<status status="PASS" starttime="20220531 05:44:59.724" endtime="20220531 05:44:59.726"/>
+<status status="PASS" starttime="20220621 11:50:51.287" endtime="20220621 11:50:51.287"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${WC_code}</var>
 <arg>${WithoutClass.json()}</arg>
 <arg>statusCode</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220531 05:44:59.728" level="INFO">${WC_code} = 200</msg>
-<status status="PASS" starttime="20220531 05:44:59.727" endtime="20220531 05:44:59.728"/>
+<msg timestamp="20220621 11:50:51.291" level="INFO">${WC_code} = 200</msg>
+<status status="PASS" starttime="20220621 11:50:51.288" endtime="20220621 11:50:51.291"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220531 05:44:59.732" endtime="20220531 05:44:59.733"/>
+<status status="PASS" starttime="20220621 11:50:51.291" endtime="20220621 11:50:51.292"/>
 </kw>
-<status status="PASS" starttime="20220531 05:44:57.578" endtime="20220531 05:44:59.733"/>
+<status status="PASS" starttime="20220621 11:50:50.210" endtime="20220621 11:50:51.292"/>
+</test>
+<test id="s1-s1-s1-t4" name="testcase 456">
+<kw name="get report data">
+<arg>${BaseURL}/api/insightReview/report/transaction/withoutClass/list</arg>
+<arg>params=${parameters}</arg>
+<msg timestamp="20220621 11:50:51.297" level="FAIL">No keyword with name 'get report data' found.</msg>
+<status status="FAIL" starttime="20220621 11:50:51.297" endtime="20220621 11:50:51.297"/>
+</kw>
+<status status="FAIL" starttime="20220621 11:50:51.292" endtime="20220621 11:50:51.297">No keyword with name 'get report data' found.</status>
 </test>
 <doc>Test doc</doc>
-<status status="PASS" starttime="20220531 05:44:51.599" endtime="20220531 05:44:59.739"/>
+<status status="FAIL" starttime="20220621 11:50:44.371" endtime="20220621 11:50:51.298"/>
+</suite>
+<status status="FAIL" starttime="20220621 11:50:44.369" endtime="20220621 11:50:51.300"/>
+</suite>
+<suite id="s1-s2" name="TC01 Client Module" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module">
+<suite id="s1-s2-s1" name="TC01 Client listing" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module\TC01_Client_listing.robot">
+<test id="s1-s2-s1-t1" name="To check when user serch any entity then it is appering &amp; it is accessible when user clicks it">
+<kw name="Launch Browser" library="KD_TSTD" type="SETUP">
+<arg>Chrome</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${Browser}</arg>
+<arg>executable_path=C:/Users/bpsharma/PycharmProjects/Insight_Review/Project_drivers/${Browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220621 11:50:51.323" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220621 11:50:51.322" endtime="20220621 11:50:53.093"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220621 11:50:53.094" level="INFO">Opening url 'https://insightreview.aixsol.com/login'</msg>
+<status status="PASS" starttime="20220621 11:50:53.093" endtime="20220621 11:51:02.673"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220621 11:51:02.673" endtime="20220621 11:51:02.851"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${uname_textbox}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:02.852" level="INFO">Typing text 'jkshah@analytix.com' into text field 'name:Email'.</msg>
+<status status="PASS" starttime="20220621 11:51:02.852" endtime="20220621 11:51:02.992"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Pass_textbox}</arg>
+<arg>${valid_pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:02.993" level="INFO">Typing password into text field 'name:Password'.</msg>
+<msg timestamp="20220621 11:51:03.035" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220621 11:51:03.090" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220621 11:51:02.993" endtime="20220621 11:51:03.090"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Sign_in}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:03.092" level="INFO">Clicking button 'class:btn'.</msg>
+<status status="PASS" starttime="20220621 11:51:03.091" endtime="20220621 11:51:03.164"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${List_client}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220621 11:51:03.164" endtime="20220621 11:51:11.601"/>
+</kw>
+<status status="PASS" starttime="20220621 11:50:51.322" endtime="20220621 11:51:11.602"/>
+</kw>
+<kw name="Enter text in serch &amp; clcik on that entity" library="KD_client_page">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Search_box}</arg>
+<arg>${serchtext}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:11.603" level="INFO">Typing text '101 Federal Street LLC' into text field 'css:input[name="textBoxSearch"]'.</msg>
+<status status="PASS" starttime="20220621 11:51:11.603" endtime="20220621 11:51:12.276"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Entity}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:12.276" level="INFO">Clicking element 'css:a[class='entity__filter']'.</msg>
+<status status="PASS" starttime="20220621 11:51:12.276" endtime="20220621 11:51:12.409"/>
+</kw>
+<status status="PASS" starttime="20220621 11:51:11.602" endtime="20220621 11:51:12.409"/>
+</kw>
+<kw name="Select entity &amp; check user land on dashboard" library="KD_client_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Dashboard}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220621 11:51:12.410" endtime="20220621 11:51:14.246"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text_dash}</var>
+<arg>${Dashboard}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:14.283" level="INFO">${Text_dash} = Dashboard</msg>
+<status status="PASS" starttime="20220621 11:51:14.246" endtime="20220621 11:51:14.283"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Text_dash}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220621 11:51:14.284" level="INFO">Dashboard</msg>
+<status status="PASS" starttime="20220621 11:51:14.283" endtime="20220621 11:51:14.284"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220621 11:51:14.284" level="INFO">Dashboard</msg>
+<status status="PASS" starttime="20220621 11:51:14.284" endtime="20220621 11:51:14.284"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${Text_dash}</arg>
+<arg>${Name}</arg>
+<arg>STrings are not matching check the navigation flow</arg>
+<arg>values=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220621 11:51:14.284" endtime="20220621 11:51:14.286"/>
+</kw>
+<status status="PASS" starttime="20220621 11:51:12.410" endtime="20220621 11:51:14.286"/>
+</kw>
+<kw name="Navigate to bookeeping review for further testing" library="KD_client_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Bookkeeping}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:14.288" level="INFO">Clicking element 'css:a[routerlink='bookkeeping-review']'.</msg>
+<msg timestamp="20220621 11:51:15.628" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220621 11:51:15.635" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a _ngcontent-rqv-c120="" routerlink="bookkeeping-review" routerlinkactive="active" href="/clients/bookkeeping-review"&gt;...&lt;/a&gt; is not clickable at point (196, 67). Other element would receive the click: &lt;div _ngcontent-rqv-c123="" id="loaderDiv" class="spinner-wrap active"&gt;...&lt;/div&gt;
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B1B8F3+2406643]
+	Ordinal0 [0x00AAAF31+1945393]
+	Ordinal0 [0x0099C748+837448]
+	Ordinal0 [0x009CFA1B+1047067]
+	Ordinal0 [0x009CD9F8+1038840]
+	Ordinal0 [0x009CB6DB+1029851]
+	Ordinal0 [0x009CA439+1025081]
+	Ordinal0 [0x009C0083+983171]
+	Ordinal0 [0x009E427C+1131132]
+	Ordinal0 [0x009BFA64+981604]
+	Ordinal0 [0x009E4494+1131668]
+	Ordinal0 [0x009F4682+1197698]
+	Ordinal0 [0x009E4096+1130646]
+	Ordinal0 [0x009BE636+976438]
+	Ordinal0 [0x009BF546+980294]
+	GetHandleVerifier [0x00D89612+2498066]
+	GetHandleVerifier [0x00D7C920+2445600]
+	GetHandleVerifier [0x00BB4F2A+579370]
+	GetHandleVerifier [0x00BB3D36+574774]
+	Ordinal0 [0x00AB1C0B+1973259]
+	Ordinal0 [0x00AB6688+1992328]
+	Ordinal0 [0x00AB6775+1992565]
+	Ordinal0 [0x00ABF8D1+2029777]
+	BaseThreadInitThunk [0x7626FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x771F7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x771F7A6E+238]
+</msg>
+<status status="FAIL" starttime="20220621 11:51:14.287" endtime="20220621 11:51:15.635"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${submitbtn}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20220621 11:51:15.635" endtime="20220621 11:51:15.635"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${submitbtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220621 11:51:15.635" endtime="20220621 11:51:15.636"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220621 11:51:15.636" endtime="20220621 11:51:15.636"/>
+</kw>
+<status status="FAIL" starttime="20220621 11:51:14.287" endtime="20220621 11:51:15.636"/>
+</kw>
+<status status="FAIL" starttime="20220621 11:50:51.321" endtime="20220621 11:51:15.636">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a _ngcontent-rqv-c120="" routerlink="bookkeeping-review" routerlinkactive="active" href="/clients/bookkeeping-review"&gt;...&lt;/a&gt; is not clickable at point (196, 67). Other element would receive the click: &lt;div _ngcontent-rqv-c123="" id="loaderDiv" class="spinner-wrap active"&gt;...&lt;/div&gt;
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00B1B8F3+2406643]
+	Ordinal0 [0x00AAAF31+1945393]
+	Ordinal0 [0x0099C748+837448]
+	Ordinal0 [0x009CFA1B+1047067]
+	Ordinal0 [0x009CD9F8+1038840]
+	Ordinal0 [0x009CB6DB+1029851]
+	Ordinal0 [0x009CA439+1025081]
+	Ordinal0 [0x009C0083+983171]
+	Ordinal0 [0x009E427C+1131132]
+	Ordinal0 [0x009BFA64+981604]
+	Ordinal0 [0x009E4494+1131668]
+	Ordinal0 [0x009F4682+1197698]
+	Ordinal0 [0x009E4096+1130646]
+	Ordinal0 [0x009BE636+976438]
+	Ordinal0 [0x009BF546+980294]
+	GetHandleVerifier [0x00D89612+2498066]
+	GetHandleVerifier [0x00D7C920+2445600]
+	GetHandleVerifier [0x00BB4F2A+579370]
+	GetHandleVerifier [0x00BB3D36+574774]
+	Ordinal0 [0x00AB1C0B+1973259]
+	Ordinal0 [0x00AB6688+1992328]
+	Ordinal0 [0x00AB6775+1992565]
+	Ordinal0 [0x00ABF8D1+2029777]
+	BaseThreadInitThunk [0x7626FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x771F7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x771F7A6E+238]
+</status>
+</test>
+<doc>Test doc</doc>
+<status status="FAIL" starttime="20220621 11:50:51.303" endtime="20220621 11:51:15.637"/>
+</suite>
+<status status="FAIL" starttime="20220621 11:50:51.301" endtime="20220621 11:51:15.638"/>
+</suite>
+<suite id="s1-s3" name="TC02 Bookkeeping" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping">
+<suite id="s1-s3-s1" name="TC01 bookkeeping" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping\TC01_bookkeeping.robot">
+<test id="s1-s3-s1-t1" name="To check that user is in the Exception report page">
+<kw name="Get the report name" library="KD_Bookkeeping">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${test}</var>
+<arg>${Reportname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220621 11:51:15.846" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220621 11:51:15.848" level="FAIL">Element with locator 'css:h1' not found.</msg>
+<status status="FAIL" starttime="20220621 11:51:15.658" endtime="20220621 11:51:15.848"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220621 11:51:15.849" endtime="20220621 11:51:15.850"/>
+</kw>
+<status status="FAIL" starttime="20220621 11:51:15.658" endtime="20220621 11:51:15.850"/>
+</kw>
+<kw name="Test Filters On Report" library="Filter">
+<arg>${filtername}</arg>
+<status status="NOT RUN" starttime="20220621 11:51:15.850" endtime="20220621 11:51:15.850"/>
+</kw>
+<status status="FAIL" starttime="20220621 11:51:15.657" endtime="20220621 11:51:15.850">Element with locator 'css:h1' not found.</status>
+</test>
+<doc>Test doc</doc>
+<status status="FAIL" starttime="20220621 11:51:15.641" endtime="20220621 11:51:15.851"/>
+</suite>
+<status status="FAIL" starttime="20220621 11:51:15.638" endtime="20220621 11:51:15.853"/>
+</suite>
+<status status="FAIL" starttime="20220621 11:50:44.338" endtime="20220621 11:51:15.854"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="FetchToken">FetchToken</stat>
+<stat pass="2" fail="4" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="2" fail="2" skip="0" id="s1-s1" name="APITESTING">Testcases.APITESTING</stat>
+<stat pass="2" fail="2" skip="0" id="s1-s1-s1" name="FetchToken">Testcases.APITESTING.FetchToken</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="TC01 Client Module">Testcases.TC01 Client Module</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2-s1" name="TC01 Client listing">Testcases.TC01 Client Module.TC01 Client listing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3" name="TC02 Bookkeeping">Testcases.TC02 Bookkeeping</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3-s1" name="TC01 bookkeeping">Testcases.TC02 Bookkeeping.TC01 bookkeeping</stat>
 </suite>
 </statistics>
 <errors>
