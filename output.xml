@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220621 11:50:44.335" rpa="false" schemaversion="2">
-<suite id="s1" name="Testcases" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases">
-<suite id="s1-s1" name="APITESTING" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING">
-<suite id="s1-s1-s1" name="FetchToken" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\APITESTING\FetchToken.robot">
+<suite id="s1" name="Testcases" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases">
+<suite id="s1-s1" name="APITESTING" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\APITESTING">
+<suite id="s1-s1-s1" name="FetchToken" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\APITESTING\FetchToken.robot">
 <test id="s1-s1-s1-t1" name="Geneareta the token using authenticate so that Request chaining can be used">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{REQ_data}</var>
@@ -215,14 +215,14 @@
 </suite>
 <status status="FAIL" starttime="20220621 11:50:44.369" endtime="20220621 11:50:51.300"/>
 </suite>
-<suite id="s1-s2" name="TC01 Client Module" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module">
-<suite id="s1-s2-s1" name="TC01 Client listing" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module\TC01_Client_listing.robot">
+<suite id="s1-s2" name="TC01 Client Module" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module">
+<suite id="s1-s2-s1" name="TC01 Client listing" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\TC01_Client_Module\TC01_Client_listing.robot">
 <test id="s1-s2-s1-t1" name="To check when user serch any entity then it is appering &amp; it is accessible when user clicks it">
 <kw name="Launch Browser" library="KD_TSTD" type="SETUP">
 <arg>Chrome</arg>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>${Browser}</arg>
-<arg>executable_path=C:/Users/bpsharma/PycharmProjects/Insight_Review/Project_drivers/${Browser}</arg>
+<arg>executable_path=C:/Users/bankim.sharma/PycharmProjects/Insight_Review/Project_drivers/${Browser}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
 <msg timestamp="20220621 11:50:51.323" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <status status="PASS" starttime="20220621 11:50:51.322" endtime="20220621 11:50:53.093"/>
@@ -413,8 +413,8 @@ Backtrace:
 </suite>
 <status status="FAIL" starttime="20220621 11:50:51.301" endtime="20220621 11:51:15.638"/>
 </suite>
-<suite id="s1-s3" name="TC02 Bookkeeping" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping">
-<suite id="s1-s3-s1" name="TC01 bookkeeping" source="C:\Users\bpsharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping\TC01_bookkeeping.robot">
+<suite id="s1-s3" name="TC02 Bookkeeping" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping">
+<suite id="s1-s3-s1" name="TC01 bookkeeping" source="C:\Users\bankim.sharma\PycharmProjects\Insight_Review\Testcases\TC02_Bookkeeping\TC01_bookkeeping.robot">
 <test id="s1-s3-s1-t1" name="To check that user is in the Exception report page">
 <kw name="Get the report name" library="KD_Bookkeeping">
 <kw name="Get Text" library="SeleniumLibrary">
